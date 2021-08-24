@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBar from '../../elements/navBar';
-import FlexView from '../../elements/cardView/flexView'
+// import FlexView from '../../elements/cardView/flexView'
 import Slider from '../../elements/cardView/slider'
 const products = [
     {
@@ -50,8 +50,16 @@ const Landing =()=>{
     return(
         <div>
             <NavBar/>
-            <FlexView products={products}/>
-            <Slider/>
+            <div style={{padding:30}}>
+            {/* <FlexView products={products}/> */}
+                <Slider products={products} title="Deal of the day"/>
+                <Slider products={products} title="Top offers on"/>
+                <Slider products={products} title="Fashion"/>
+                <Slider products={products} title="Mobiles"/>
+                <Slider products={products} title="Deal of the day"/>
+                <Slider products={products} title="Deal of the day"/>
+                <Slider products={products} title="Deal of the day"/>
+            </div>
         </div>
     )
 }

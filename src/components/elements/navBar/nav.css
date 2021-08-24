@@ -1,8 +1,11 @@
 .nav_container{
     height: 65px;
-    background-color: #ff7961;
+    background-color: #212121;
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 .nav_container img{
     padding: 9px;

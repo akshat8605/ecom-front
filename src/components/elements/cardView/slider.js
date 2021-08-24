@@ -1,34 +1,46 @@
 import React from "react";
 import Slider from "react-slick";
+import Card from '../../elements/card'
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "red" }}
+      onClick={onClick}
+    />
+  );
+}
 
-export default function SimpleSlider() {
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "green" }}
+      onClick={onClick}
+    />
+  );
+}
+export default function SimpleSlider({products, title}) {
   var settings = {
-    dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1
+    slidesToShow: 4,
+    slidesToScroll: 2,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />
   };
-  return (
-    <Slider {...settings}>
-      <div >
-        <h3 style={{height:"100vh", backgroundColor:"blue"}}>1</h3>
-      </div>
-      <div  >
-        <h3 style={{height:"100vh", backgroundColor:"green"}}>2</h3>
-      </div>
-      <div  style={{height:"100vh", backgroundColor:"blue"}}>
-        <h3>3</h3>
-      </div>
-      <div  style={{height:"100vh", backgroundColor:"yellow"}}>
-        <h3>4</h3>
-      </div>
-      <div>
-        <h3>5</h3>
-      </div>
-      <div>
-        <h3>6</h3>
-      </div>
-    </Slider>
+  return (<div>
+      <h1>{title}</h1>
+      <Slider {...settings}>
+        {
+              products.map((e)=>{
+                  return(<div> <Card e={e}/></div>)
+              })
+          }
+        
+      </Slider>
+    </div>
   );
 }
