@@ -1,25 +1,24 @@
-import { Route, Switch } from 'react-router-dom';
+
 import './App.css';
-import Landing from './components/routes/landing'
-import Login from './components/routes/login'
+import {
+  BrowserRouter as Router,
+  Switch,
+} from "react-router-dom";
+import Loding from './components/router/Lading';
+// import Navbar from './components/router/nav/index';
+// import Carts from './components/elements/card';
+
+
 
 
 function App() {
   return (
     <div>
-        <Switch>
-        <Route path="/login" exact>
-              <Login/>
-          </Route>
-          
-          <Route path="/" exact>
-              <Landing/>
-          </Route>
-          
-          
-          
-        
-        </Switch>
+      <Switch>
+        <Router exact path="/">
+          <Loding/>
+        </Router>
+      </Switch>
     </div>
   );
 }
