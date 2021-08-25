@@ -1,0 +1,48 @@
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 60px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 111;
+    background: rebeccapurple;
+}
+
+.navbar .icon{
+    font-size: 2.6rem;
+    color: #eee;
+}
+
+input{
+    height: 30px;
+    padding-left: 30px;
+    margin-right: 20px;
+    outline: none;
+    border: none;
+    border-radius: 13px;
+}
+
+.input{
+    position: relative;
+}
+
+.srch-icon{
+    position: absolute;
+    left: 3px;
+    top: 4px;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+}
+button{
+    background: none;
+    border: none;
+    outline: none;
+    margin: 0 6px;
+    color: #fff;
+}
