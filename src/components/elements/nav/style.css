@@ -16,7 +16,7 @@
     color: #eee;
 }
 
-input{
+.navbar input{
     height: 30px;
     padding-left: 30px;
     margin-right: 20px;
@@ -39,7 +39,7 @@ input{
     display: flex;
     align-items: center;
 }
-button{
+.navbar button{
     background: none;
     border: none;
     outline: none;
