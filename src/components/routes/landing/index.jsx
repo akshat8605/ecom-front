@@ -1,11 +1,10 @@
 import React from 'react'
 // import Slider from 'react-slick';
-import Carts from '../elements/card/index';
-import Banner from '../elements/offerBnnr/index';
-import Slide from '../elements/slider/index';
+import Carts from '../../elements/card/index';
+import Banner from '../../elements/offerBnnr/index';
+import Slide from '../../elements/slider/index';
 
-import Navbar from './nav'; 
-
+import Navbar from '../../elements/nav'; 
 
 
 const products = [

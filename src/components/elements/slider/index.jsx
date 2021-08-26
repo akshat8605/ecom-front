@@ -7,6 +7,7 @@ import Cart from '../card/cart';
 import "./style.css"
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+
 function NextArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -35,8 +36,6 @@ const Slide = ({data,title}) => {
         slidesToShow: 4,
         slidesToScroll: 2,
         autoplay: true,
-        speed: 2000,
-        autoplaySpeed: 2000,
         cssEase: "linear",
         nextArrow:<NextArrow/>,
         prevArrow:<PrevArrow/>,

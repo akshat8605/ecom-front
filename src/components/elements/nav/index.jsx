@@ -3,13 +3,14 @@ import AppleIcon from '@material-ui/icons/Apple';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import SearchIcon from '@material-ui/icons/Search'
 import "./style.css"
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
       <>
         <div className="navbar">
             <div>
-                <AppleIcon className="icon"/>
+                <Link to="/" style={{color:"white", textDecoration:"none"}}><AppleIcon className="icon"/></Link>
             </div>
             <div className="menu">
                 <div className="input">
@@ -17,8 +18,9 @@ const Navbar = () => {
                     <SearchIcon className="srch-icon"/>
                 </div>
                 <button><ShoppingCartIcon/></button>
-                <button>Login</button>
+                <button><Link to="/login" style={{color:"white", textDecoration:"none"}}>Login</Link></button>
             </div>
+
         </div>
       </>
     )

@@ -1,0 +1,81 @@
+.login-container{
+    max-width: 460px;
+    padding: 46px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.login{
+    padding-top:80px ;
+    background-color: rebeccapurple;
+    height: 100vh;
+}
+.login-container input{
+    margin: 10px;
+    height: 30px;
+    padding-left: 30px;
+    margin-right: 20px;
+    outline: none;
+    border: none;
+    border-radius: 13px;
+    font-weight: 600;
+}
+.sing-up{
+    display: flex;
+    flex-direction: column;
+}
+.sing-up p{
+    text-align: center;
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.login-container button,
+.sing-up button{
+    text-align: center;
+    height: 30px;
+    margin: 16px 0;
+    outline: none;
+    border: none;
+    border-radius: 13px;
+    padding-left: 30px;
+    margin-right: 20px;
+    background-color: rebeccapurple;
+    color: aliceblue;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+.login-container textarea{
+    margin: 10px;
+    height: 73px;
+    padding-left: 30px;
+    padding-top: 20px;
+    margin-right: 20px;
+    outline: none;
+    border: none;
+    border-radius: 13px;
+    font-weight: 600;
+}
+.login-container button:hover{
+    box-shadow:0 0 6px #000;
+    letter-spacing: 3px;
+}
+.login-container h1{
+    color:white;
+}
+
+@media(max-width:643px){
+    .login-container{
+        margin-top: 90px;
+        padding: 20px 16px;
+    }
+}

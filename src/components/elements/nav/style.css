@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     padding: 10px 60px;
     position: fixed;
     left: 0;
@@ -10,26 +10,46 @@
     z-index: 111;
     background: rebeccapurple;
 }
+@media(max-width:643px){
+    .navbar{
+        flex-direction:column;
+        text-align: left;
+        padding: 10px 20px;
+    }
+    .menu{
+    flex-direction: column;
+    /* width: 100% !important;
+    text-align: left; */
+    }
+    .navbar .menu button,.navbar .menu input{
+        width: 100%;
+        text-align: left;
+    }
+    .navbar .menu .input{
+        width: 100% !important;
+        margin: 13px 0;
+    }
+}
 
 .navbar .icon{
     font-size: 2.6rem;
     color: #eee;
 }
 
-input{
+.navbar .menu input{
     height: 30px;
     padding-left: 30px;
     margin-right: 20px;
     outline: none;
     border: none;
     border-radius: 13px;
+    position: relative;
 }
-
-.input{
+.navbar .menu .input{
     position: relative;
 }
 
-.srch-icon{
+.navbar .menu .srch-icon{
     position: absolute;
     left: 3px;
     top: 4px;
@@ -39,7 +59,7 @@ input{
     display: flex;
     align-items: center;
 }
-button{
+.navbar .menu button{
     background: none;
     border: none;
     outline: none;

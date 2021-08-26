@@ -28,8 +28,6 @@ const Banner = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        speed: 5000,
-        autoplaySpeed: 6000,
         cssEase: "linear"
       };
     return (

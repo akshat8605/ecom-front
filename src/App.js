@@ -1,13 +1,12 @@
-
+import React from 'react';
 import './App.css';
 import {
-  BrowserRouter as Router,
   Switch,
+  Route
 } from "react-router-dom";
-import Loding from './components/router/Lading';
-// import Navbar from './components/router/nav/index';
-// import Carts from './components/elements/card';
-
+import Landing from './components/routes/landing';
+import Login from './components/routes/login'
+import Singup from './components/routes/login/Singup'
 
 
 
@@ -15,9 +14,15 @@ function App() {
   return (
     <div>
       <Switch>
-        <Router exact path="/">
-          <Loding/>
-        </Router>
+        <Route exact path="/login">
+          <Login/>
+        </Route>
+        <Route exact path="/Singup">
+          <Singup />
+        </Route>
+        <Route exact path="/">
+          <Landing/>
+        </Route>
       </Switch>
     </div>
   );
