@@ -55,10 +55,10 @@ const products = [
 
 
 
-const Loding = () => {
+const Loding = ({auth}) => {
     return (
         <div>
-           <Navbar/>
+           <Navbar auth={auth}/>
            <Banner/>
            <Slide data={products}  title="best Selling"/>
            <Slide data={products}  title="Hot today"/>

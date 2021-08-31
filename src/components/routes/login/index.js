@@ -10,7 +10,7 @@ export default class Login extends Component{
         database:[
             {
                 email:'akshat8605@gmail.com',
-                pass:"123",
+                pass:"123456",
                 bio:'asoidnhfiaundeuiwnd'
             },
             {
@@ -36,8 +36,7 @@ export default class Login extends Component{
         var isInDatabase=false;
         database.forEach(item=>{
             if(item.email === email && item.pass === pass){
-                this.setState({currentUser:item})
-                alert("Success!");
+                this.props.getUser(item)
                 isInDatabase=true
             }
         })
@@ -78,20 +77,20 @@ export default class Login extends Component{
             }
             database.push(obj);
         this.setState({database});
-        alert("registered sucessfull");
+        this.props.getUser(obj)
        
         
         }
     render(){
         const {route}=this.state
         return(<div className="login">
-            <NavBar/>
+            <NavBar auth={this.props.auth}/>
                 <div className="login-container">
                     <div style={{display:'flex', justifyContent:"space-between"}}>
-                        <h1 style={{color:route!=="login"?"blue":'white'}}>
+                        <h1 style={{color:route!=="login"?"blue":'white'}} onClick={()=>this.setState({route:"login"})}>
                             Login
                         </h1>
-                        <h1 style={{color:route!=="register"?"blue":'white'}}>
+                        <h1 style={{color:route!=="register"?"blue":'white'}} onClick={()=>this.setState({route:"register"})}>
                             Register
                         </h1>
                     </div>
@@ -101,8 +100,8 @@ export default class Login extends Component{
                     }}
                     />
                     <input placeholder="password" type="password" onChange={(e)=>{this.setState({pass:e.target.value})}}/>
-                    <button onClick={this.onLogin}>Submit</button>
-                    <button onClick={this.onRegister}>Register</button>
+                   {route==="login"? <button onClick={this.onLogin}>Login</button>
+                    :<button onClick={this.onRegister}>Register</button>}
                 </div>
         </div>)
     }

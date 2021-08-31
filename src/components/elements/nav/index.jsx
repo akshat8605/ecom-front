@@ -5,7 +5,8 @@ import SearchIcon from '@material-ui/icons/Search'
 import "./style.css"
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({auth}) => {
+    console.log(auth)
     return (
       <>
         <div className="navbar">
@@ -18,7 +19,8 @@ const Navbar = () => {
                     <SearchIcon className="srch-icon"/>
                 </div>
                 <button><ShoppingCartIcon/></button>
-                <button><Link to="/login" style={{color:"white", textDecoration:"none"}}>Login</Link></button>
+                {auth?<button><Link to="/login" style={{color:"white", textDecoration:"none"}}>Logout</Link></button>
+                :<button><Link to="/login" style={{color:"white", textDecoration:"none"}}>Login</Link></button>}
             </div>
         </div>
       </>
