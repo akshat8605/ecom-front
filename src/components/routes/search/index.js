@@ -1,12 +1,6 @@
 import React from 'react'
-// import Slider from 'react-slick';
-import Carts from '../../elements/card/index';
-import Banner from '../../elements/offerBnnr/index';
-import Slide from '../../elements/slider/index';
-
-import Navbar from '../../elements/nav'; 
-
-
+import Carts from '../../elements/card'
+import Navbar from '../../elements/nav'
 
 const products = [
     {
@@ -50,23 +44,16 @@ const products = [
         img:"https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=749&q=80",
         title:"Gucci Bag",
         prize:"993$"
-    },
+    }
 ]
 
-
-
-const Loding = ({auth}) => {
-    return (
-        <div>
-           <Navbar auth={auth}/>
-           <Banner/>
-           <Slide data={products}  title="best Selling"/>
-           <Slide data={products}  title="Hot today"/>
-           <Slide data={products}  title="Offer"/>
-           <Carts products={products}
-           />
-        </div>
-    )
+const Search =({auth})=>{
+    return(<div>
+        <Navbar auth={auth}/>
+        <Carts products={products}/>
+        </div>)
 }
 
-export default Loding;
+
+
+export default Search

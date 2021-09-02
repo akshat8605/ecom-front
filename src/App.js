@@ -8,12 +8,10 @@ import {
 
 import Landing from './components/routes/landing';
 import Login from './components/routes/login'
-import { useState } from 'react';
+import React,  { useState } from 'react';
+import Search from './components/routes/search'
 // import Navbar from './components/router/nav/index';
 // import Carts from './components/elements/card';
-
-
-
 
 function App() {
   let history=useHistory();
@@ -22,8 +20,9 @@ function App() {
   const getUser=(user)=>{
     setUser(user)
     setAuth(true)
-    history.push('/')
+    history.push('/search')
   }
+  
   const logout=()=>{
     setUser({})
     setAuth(false)
@@ -31,6 +30,10 @@ function App() {
   return (
     <div>
       <Switch>
+        
+      <Route exact path="/search">
+          <Search getUser={getUser} auth={auth}/>
+        </Route>
         <Route exact path="/login">
           <Login getUser={getUser} auth={auth}/>
         </Route>

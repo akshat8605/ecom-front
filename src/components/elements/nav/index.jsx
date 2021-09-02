@@ -11,7 +11,9 @@ const Navbar = ({auth}) => {
       <>
         <div className="navbar">
             <div>
-                <AppleIcon className="icon"/>
+                <Link to="/search">
+                    <AppleIcon className="icon"/>
+                </Link>
             </div>
             <div className="menu">
                 <div className="input">
