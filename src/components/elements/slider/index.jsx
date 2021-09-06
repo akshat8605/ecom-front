@@ -81,7 +81,7 @@ const Slide = ({data,title}) => {
             <Slider  {...settings} className="slider" >
                     {
                     data.map((e,indx)=>
-                    <Cart data = {e} key={indx} />
+                    <Cart data = {e} key={indx} id={indx} />
                     )
                 }
             </Slider>

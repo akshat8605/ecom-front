@@ -5,6 +5,7 @@ import Banner from '../../elements/offerBnnr/index';
 import Slide from '../../elements/slider/index';
 
 import Navbar from '../../elements/nav'; 
+import { useHistory } from 'react-router-dom';
 
 
 
@@ -55,16 +56,20 @@ const products = [
 
 
 
-const Loding = ({auth}) => {
+const Loding = ({auth, setSearch}) => {
+    let history = useHistory()
+    const onSearch=(e)=>{
+        setSearch(e.target.value)
+        history.push('/search')
+    }
     return (
         <div>
-           <Navbar auth={auth}/>
+           <Navbar auth={auth} onSearch={onSearch}/>
            <Banner/>
            <Slide data={products}  title="best Selling"/>
            <Slide data={products}  title="Hot today"/>
            <Slide data={products}  title="Offer"/>
-           <Carts products={products}
-           />
+           <Carts products={products}/>
         </div>
     )
 }

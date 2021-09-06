@@ -10,6 +10,7 @@ import Landing from './components/routes/landing';
 import Login from './components/routes/login'
 import React,  { useState } from 'react';
 import Search from './components/routes/search'
+import Product from './components/routes/product'
 // import Navbar from './components/router/nav/index';
 // import Carts from './components/elements/card';
 
@@ -17,6 +18,7 @@ function App() {
   let history=useHistory();
   const [user, setUser]=useState({});
   const [auth, setAuth]= useState(false)
+  const [searchValue, setSearch]= useState(false)
   const getUser=(user)=>{
     setUser(user)
     setAuth(true)
@@ -27,18 +29,22 @@ function App() {
     setUser({})
     setAuth(false)
   }
+  console.log(searchValue)
   return (
     <div>
       <Switch>
         
+      <Route exact path="/product/:id">
+          <Product getUser={getUser} auth={auth} searchValue={searchValue} setSearch={setSearch}/>
+        </Route>
       <Route exact path="/search">
-          <Search getUser={getUser} auth={auth}/>
+          <Search getUser={getUser} auth={auth} searchValue={searchValue} setSearch={setSearch}/>
         </Route>
         <Route exact path="/login">
           <Login getUser={getUser} auth={auth}/>
         </Route>
         <Route exact path="/">
-          <Landing auth={auth} user={user}/>
+          <Landing auth={auth} user={user} setSearch={setSearch}/>
         </Route>
       </Switch>
     </div>

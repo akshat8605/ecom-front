@@ -1,10 +1,12 @@
 import React from "react";
 import "./style.css";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-const Cart = ({ data }) => {
+import { Link } from "react-router-dom";
+const Cart = ({ data, id }) => {
   return (
+    
     <>
-
+  
       <div className="cart">
 
         <div className="cart-items">
@@ -13,10 +15,12 @@ const Cart = ({ data }) => {
             <img src={data.img} alt="" />
           </div>
           <div className="crt-dist">
-            <div>
+           <Link to={`/product/${id}`}>
+             <div>
             <p>{data.title}</p>
             <p>{data.prize}</p>
             </div>
+            </Link>
              <div className="add-cart">
                  <span>Add</span>
                 <ShoppingCartIcon/>
