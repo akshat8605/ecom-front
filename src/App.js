@@ -14,7 +14,7 @@ import Product from './components/routes/product'
 // import Navbar from './components/router/nav/index';
 // import Carts from './components/elements/card';
 
-function App() {
+function App({store}) {
   let history=useHistory();
   const [user, setUser]=useState({});
   const [auth, setAuth]= useState(false)
@@ -29,7 +29,7 @@ function App() {
     setUser({})
     setAuth(false)
   }
-  console.log(searchValue)
+  console.log(store)
   return (
     <div>
       <Switch>
