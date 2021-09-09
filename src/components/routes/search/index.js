@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Carts from '../../elements/card'
 import Navbar from '../../elements/nav'
+import { connect } from 'react-redux';
 
 const products = [
     {
@@ -46,13 +47,25 @@ const products = [
         prize:"993$"
     }
 ]
+const mapStateToProps = (state) => {
+    return{
+        searchField:state.searchField
+    }
+}
 
-const Search =({auth, searchValue, setSearch})=>{
+const mapDispatchToProps = (dispatch) =>{
+    return{
+        
+    }
+    
+}
+
+const Search =({auth, searchField, setSearch})=>{
     const [items, setItems]= useState(products)
     useEffect(() => {
-        var itemsNew = products.filter(item=>item.title.toLowerCase().includes(searchValue.toLowerCase()))
+        var itemsNew = products.filter(item=>item.title.toLowerCase().includes(searchField.toLowerCase()))
         setItems(itemsNew)
-    }, [searchValue])
+    }, [searchField])
     const onSearch=(e)=>{
         setSearch(e.target.value)
     }
@@ -64,4 +77,4 @@ const Search =({auth, searchValue, setSearch})=>{
 
 
 
-export default Search
+export default connect(mapStateToProps, mapDispatchToProps) (Search)

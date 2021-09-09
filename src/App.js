@@ -29,7 +29,6 @@ function App({store}) {
     setUser({})
     setAuth(false)
   }
-  console.log(store)
   return (
     <div>
       <Switch>

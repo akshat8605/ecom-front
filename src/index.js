@@ -4,19 +4,22 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import reportWebVitals from './reportWebVitals';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import {
   BrowserRouter as Router,
 } from "react-router-dom";
 import { searchProduct } from './components/reducer';
+import { createLogger } from 'redux-logger';
 
-
-const store = createStore(searchProduct)
+const logger = createLogger();
+const store = createStore(searchProduct, applyMiddleware(logger))
 
 ReactDOM.render(
   <Router>
     <React.StrictMode>
-      <App store={store}/>
+      <Provider store={store}>
+        <App />
+      </Provider>
     </React.StrictMode>
   </Router>,
   document.getElementById('root')
