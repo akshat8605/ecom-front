@@ -1,0 +1,10 @@
+.cart_card_container{
+    max-height: 150px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-top: 5px;
+}

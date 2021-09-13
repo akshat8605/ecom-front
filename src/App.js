@@ -11,6 +11,7 @@ import Login from './components/routes/login'
 import React,  { useState } from 'react';
 import Search from './components/routes/search'
 import Product from './components/routes/product'
+import Cart from './components/routes/cart'
 // import Navbar from './components/router/nav/index';
 // import Carts from './components/elements/card';
 
@@ -33,6 +34,9 @@ function App({store}) {
     <div>
       <Switch>
         
+      <Route exact path="/cart">
+          <Cart getUser={getUser} auth={auth} searchValue={searchValue} setSearch={setSearch}/>
+        </Route>
       <Route exact path="/product/:id">
           <Product getUser={getUser} auth={auth} searchValue={searchValue} setSearch={setSearch}/>
         </Route>

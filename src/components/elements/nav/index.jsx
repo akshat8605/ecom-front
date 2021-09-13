@@ -43,7 +43,7 @@ const Navbar = ({auth,  searchField, setSearchField}) => {
                     <input type="text"  placeholder="Search" onChange={setSearchField} onKeyDown={onKeyDown}/>
                     <SearchIcon className="srch-icon"/>
                 </div>
-                <button><ShoppingCartIcon/></button>
+             <Link to="/cart">   <button><ShoppingCartIcon/></button></Link>
                 {auth?<button><Link to="/login" style={{color:"white", textDecoration:"none"}}>Logout</Link></button>
                 :<button><Link to="/login" style={{color:"white", textDecoration:"none"}}>Login</Link></button>}
             </div>

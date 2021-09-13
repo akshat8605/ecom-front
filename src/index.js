@@ -8,11 +8,11 @@ import { createStore, applyMiddleware } from 'redux';
 import {
   BrowserRouter as Router,
 } from "react-router-dom";
-import { searchProduct } from './components/reducer';
+import { Ecom } from './components/reducer';
 import { createLogger } from 'redux-logger';
 
 const logger = createLogger();
-const store = createStore(searchProduct, applyMiddleware(logger))
+const store = createStore(Ecom, applyMiddleware(logger))
 
 ReactDOM.render(
   <Router>
