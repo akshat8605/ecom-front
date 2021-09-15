@@ -2,7 +2,19 @@ import React from "react";
 import "./style.css";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { Link } from "react-router-dom";
-const Cart = ({ data, id }) => {
+import { connect } from 'react-redux';
+import { addToCart } from "../../action";
+
+const mapStateToProps= (state) =>{
+
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return{
+        addToCart:function(product){dispatch(addToCart(product))}
+    } 
+}
+const Cart = ({ data, id, addToCart }) => {
   return (
     
     <>
@@ -21,7 +33,7 @@ const Cart = ({ data, id }) => {
             <p>{data.prize}</p>
             </div>
             </Link>
-             <div className="add-cart">
+             <div className="add-cart" onClick={()=>{addToCart(data)}}>
                  <span>Add</span>
                 <ShoppingCartIcon/>
              </div>
@@ -35,4 +47,4 @@ const Cart = ({ data, id }) => {
   );
 };
 
-export default Cart;
+export default connect(mapStateToProps, mapDispatchToProps) (Cart);

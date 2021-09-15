@@ -19,6 +19,7 @@ export const Ecom = (state = initialState, action = {}) => {
         case CHANGE_SEARCH_FIELD:
            
             return {...state, searchField: action.payload};
+            
         case ADD_TO_CART:
             var cart = state.cart;
             var obj ={}
